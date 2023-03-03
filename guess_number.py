@@ -1,16 +1,18 @@
 import random
 
-num = random.randint(1, 100)
+r1 = int(input("請輸入範圍 第1個數字: "))
+r2 = int(input("請輸入範圍 第2個數字(要比第1個數字大): "))
+num = random.randint(r1, r2)
 guess_num = 0
+
 while True:
 	guess_num += 1
-	ans = int(input("猜個1~100的數字"))
+	ans = int(input(f"猜個數字: "))
 	print(f"猜第{guess_num}次")
 	if num == ans:
 		print("猜對了!")
 		break
+	elif num > ans:
+		print(f"{ans}太小了")
 	else:
-		if num > ans:
-			print("比較大")
-		else:
-			print("比較小")
+		print(f"{ans}太大了")
